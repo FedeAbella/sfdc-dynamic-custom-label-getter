@@ -1,18 +1,13 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Dynamic Custom Label Selector
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+There is currently no built-in way in Salesforce Apex to dynamically get a Custom Label (e.g.: choosing the API name of the label at runtime depending on some given context). Sure, the code could have a very large `switch` statement and use that to determine context and find the correct label. However, this is not maintainable or scalable if one needs to add new labels and contexts in the future. Every new label would require adding `when` statements to the `switch`, and re-deploying the selector code. This is prone to introducing errors, and there should be a better way.
 
-## How Do You Plan to Deploy Your Changes?
+I've made a simple Dynamic Custom Label Selector interface to accomplish just this. This was made as a way to solve a problem I had encountered while practicing applying the principles of [Singleton](https://youtu.be/TrZvNu9q49Y) and [Strategy](https://youtu.be/CEzgDeDyQSE) design patterns as shown on [Apex Hours](https://www.youtube.com/@apexhours). 
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## How it works
 
-## Configure Your Salesforce DX Project
+In order to get the appropriate label according to some context determined at runtime, we're making use of one Apex Class per label. These classes will implement the `IGetDynamicLabel` interface, ensuring the appropriate `getLabel()` method is present. This may seem like a lot of work at first, but taking a look at the ones given as an example in this repository, you can see they're extremely simple to make and test for. In return, we transfer the responsability of each label into a different class, which ensures adding new classes doesn't require modifying existing code.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+A class implementing the `IDynamicLabelSelector` interface will work to determine context and find the appropriate class to call and get the label from. This will also be a singleton class, ensuring we're not unnecessarily creating multiple selectors. This class will build a context map from a Custom Metadata Type, mapping keys (e.g.: the DeveloperNames of the CMDT records) to the class names that need to be called to get the appropriate label.
 
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+And that's it! You can check out the [Currency Label Selector]() given as an example to see how it works. This repository also contains the Custom Metadata Type used, and all Custom Labels, so you can deploy it and test it in your own environment. In this example, we're implementing the interfaces to dynamically get the Custom Label for ARS, GBP, USD and UYU currencies, both singular and plural.

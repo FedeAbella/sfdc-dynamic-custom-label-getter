@@ -1,7 +1,10 @@
 /*
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┐
-* GetUSDPluralLabelTest: Tests for GetUSDPluralLabel class
+* GetGBPPluralLabel: Implementation of IGetDynamicLabel to get the label for GBP Currency plural
 *
+* Methods:
+*   - public String getLabel(): Returns the Custom Label corresponding to the plural noun for 
+*       GBP Currency.
 * ──────────────────────────────────────────────────────────────────────────────────────────────────
 * @author         Federico Abella   <fede.abellam@gmail.com>
 * @modifiedBy     Federico Abella   <fede.abellam@gmail.com>
@@ -9,20 +12,16 @@
 * @version        1.0
 * @created        2022-11-20
 * @modified       2022-11-20
-* @systemLayer    Test
+* @systemLayer    UI
 * ──────────────────────────────────────────────────────────────────────────────────────────────────
 * @changes
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
-@isTest
-public class GetUSDPluralLabelTest {
-    
-    @IsTest
-    static void testGetLabel(){
-        
-        System.assertEquals(
-            System.Label.USD_Plural, 
-            new GetUSDPluralLabel().getLabel()
-        );
+public class GetGBPPluralLabel implements IGetDynamicLabel{
+    /*
+    * Returns the custom label identifying the plural noun for GBP Currency
+    */
+    public String getLabel() {
+        return System.Label.GBP_Plural;
     }
 }

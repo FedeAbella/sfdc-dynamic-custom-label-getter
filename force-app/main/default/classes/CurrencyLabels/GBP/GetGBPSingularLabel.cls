@@ -1,7 +1,10 @@
 /*
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┐
-* GetUSDSingularLabelTest: Tests for GetUSDSingularLabel class
+* GetGBPSingularLabel: Implementation of IGetDynamicLabel to get the label for GBP Currency singular
 *
+* Methods:
+*   - public String getLabel(): Returns the Custom Label corresponding to the singular noun for 
+*       GBP Currency.
 * ──────────────────────────────────────────────────────────────────────────────────────────────────
 * @author         Federico Abella   <fede.abellam@gmail.com>
 * @modifiedBy     Federico Abella   <fede.abellam@gmail.com>
@@ -9,20 +12,17 @@
 * @version        1.0
 * @created        2022-11-20
 * @modified       2022-11-20
-* @systemLayer    Test
+* @systemLayer    UI
 * ──────────────────────────────────────────────────────────────────────────────────────────────────
 * @changes
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
-@isTest
-public class GetUSDSingularLabelTest {
+public class GetGBPSingularLabel implements IGetDynamicLabel {
     
-    @IsTest
-    static void testGetLabel(){
-        
-        System.assertEquals(
-            System.Label.USD_Singular, 
-            new GetUSDSingularLabel().getLabel()
-        );
+    /*
+    * Returns the custom label identifying the singular noun for GBP Currency
+    */
+    public String getLabel() {
+        return System.Label.GBP_Singular;
     }
 }

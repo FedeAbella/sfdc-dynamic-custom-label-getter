@@ -4,7 +4,7 @@
 *
 *   Salesforce doesn't currently support dynamically getting custom labels. Classes implementing 
 *   this class should implement the String getLabel() method and return the desired label. A 
-*   Selector class can then be used to map CMDT to implementing classes at runtime and instance
+*   Selector class can then be used to map CMDT to implementing classes at runtime and instantiate
 *   those classes.
 *
 * Methods:
@@ -14,8 +14,8 @@
 * @modifiedBy     Federico Abella   <fede.abellam@gmail.com>
 * @maintainedBy   Federico Abella   <fede.abellam@gmail.com>
 * @version        1.0
-* @created        2022-11-20
-* @modified       2022-11-20
+* @created        2022-12-31
+* @modified       2022-12-31
 * @systemLayer    Interface
 * ──────────────────────────────────────────────────────────────────────────────────────────────────
 * @changes

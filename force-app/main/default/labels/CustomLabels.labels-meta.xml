@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ARS_Plural</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ARS Plural</shortDescription>
+        <value>argentinian pesos</value>
+    </labels>
+    <labels>
+        <fullName>ARS_Singular</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ARS Singular</shortDescription>
+        <value>argentinian peso</value>
+    </labels>
+    <labels>
+        <fullName>GBP_Plural</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>GBP Plural</shortDescription>
+        <value>sterling pounds</value>
+    </labels>
+    <labels>
+        <fullName>GBP_Singular</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>GBP Singular</shortDescription>
+        <value>sterling pound</value>
+    </labels>
+    <labels>
+        <fullName>USD_Plural</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>USD Plural</shortDescription>
+        <value>US dollars</value>
+    </labels>
+    <labels>
+        <fullName>USD_Singular</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>USD_Singular</shortDescription>
+        <value>US dollar</value>
+    </labels>
+    <labels>
+        <fullName>UYU_Plural</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>UYU Plural</shortDescription>
+        <value>uruguayan pesos</value>
+    </labels>
+    <labels>
+        <fullName>UYU_Singular</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>UYU Singular</shortDescription>
+        <value>uruguayan peso</value>
+    </labels>
+</CustomLabels>
